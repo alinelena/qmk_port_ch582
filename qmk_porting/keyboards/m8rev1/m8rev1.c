@@ -33,8 +33,6 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(m
 
 #endif
 
-#if !defined ESB_ENABLE || ESB_ENABLE != 2
-
 int main()
 {
     extern void protocol_setup();
@@ -44,7 +42,9 @@ int main()
     platform_setup();
 
     protocol_setup();
+#if !defined ESB_ENABLE || ESB_ENABLE != 2
     keyboard_setup();
+#endif
 
     protocol_init();
 
@@ -54,21 +54,6 @@ int main()
         //! housekeeping_task() is handled by platform
     }
 }
-
-#else
-
-__HIGH_CODE int main()
-{
-    platform_setup();
-
-    for (;;) {
-        TMOS_SystemProcess();
-    }
-}
-
-#endif
-
-
 
   #ifdef OLED_ENABLE
 
