@@ -69,6 +69,7 @@ execute_process(COMMAND git rev-parse --short HEAD
     TIMEOUT 5
     OUTPUT_VARIABLE GIT_VERSION
     OUTPUT_STRIP_TRAILING_WHITESPACE
+    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 )
 execute_process(COMMAND git describe --abbrev=0 --tags
     WORKING_DIRECTORY ${QMK_BASE_DIR}
