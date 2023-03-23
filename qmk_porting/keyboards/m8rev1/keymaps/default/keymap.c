@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QW] = LAYOUT_ortho_4x2(
        KC_2    , KC_5    ,
        KC_3    , KC_6    ,
-       KC_4    , KC_7    ,
+       XP(la,lA)    , UC_LINX    ,
       TT(_LWR),  TT(_RSE)),
 
   [_LWR] = LAYOUT_ortho_4x2(
